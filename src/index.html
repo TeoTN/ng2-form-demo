@@ -1,14 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Ng2FormDemo</title>
-  <base href="/">
+  <head>
+    <title>ng2-form-demo - by Piotr Staniów</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/solar/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root>Loading...</app-root>
-</body>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+
+  <body>
+  <main class="container-fluid">
+    <div class="pane home-left-pane">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <h1>Welcome to ng2-form-demo!</h1>
+          <p>
+            The main goal of the page is to present a simple login form with validation,<br>
+            written with usage of <code>TypeScript</code> and <code>Angular</code> [v2.4.9].
+          </p>
+          <p>
+            Please notice, that for demonstration purposes the mocked server will respond
+            with an error with non-negligible probability.
+          </p>
+          <p>Author: Piotr Staniów</p>
+        </div>
+      </div>
+    </div>
+    <div class="pane home-right-pane">
+      <root></root>
+    </div>
+  </main>
+  </body>
 </html>

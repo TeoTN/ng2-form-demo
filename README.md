@@ -1,28 +1,51 @@
-# Ng2FormDemo
+# Zadanie
+W ramach zadania kandydat powinien stworzyć stronę html z zaimplementowaną obsługą formularza po stronie front-end'u.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
+```html
+<form method="POST" action="">
+    <fieldset>
+        <label for="email">email</label>
+        <input type="text" name="email" id="email">
+        <label for="password">password</label>
+        <input type="password" name="password" id="password">
+        <label for="remember">Rember me</label>
+        <input type="checkbox" name="remember" id="remember">
+      	<input type="submit" value="login">
+    </fieldset> 
+</form> 
+```
 
-## Development server
+## Wymagania funkcjonalne
+### Wymagania walidacji
+- pola email i password nie mogą być puste
+- wartość wprowadzona dla pola email powinna spełniać warunki poprawnego adresu email
+- wartość pola password powinna składać się co najmniej z 6 znaków (w tym co najmniej 1 dużej litery, 1 małej i jednej cyfry
+)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Wymagania integracji z serwerem
+Zadanie nie wymaga integracji z serwerem. Odpowiedź od serwera ma być zamockowana i powinna przepuszczać użytkownika test@test.pl/Password1.
 
-## Code scaffolding
+#### Obsługa odpowiedzi z serwera zgodnie ze specyfikacją statusów:
+**Poprawne logowanie**
+- wyświetlenie komunikatu: "login successful"; ukrycie formularza
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+**Brak autoryzacji**
+- wyświetlenie komunikatu: "invalid email or password"
 
-## Build
+**Niepoprawne dane w inputach** (z wymagań walidacji)
+- wyświetlenie komunikatu: "invalid email" / "invalid password"
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+#### wygląd formularza
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Sam formularz powinien być estetycznie zaprojektowany wykorzystując do tego możliwości HTML5/CSS3,
+- Formularz powinien dobrze wyglądać na różnych urządzeniach mobile/tablet/desktop.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Wymagania niefunkcjonalne
+- Zadanie powinno być wykonane w Angular 2 (lub nowsza wersja) + TypeScript,
+- W celu ułatwienia wykonania zadania sugeruje się wykorzystanie angular-cli,
+- Zgodność ze standardem ~ECMASCRIPT 2015, HTML5, CSS3
+- Kodowanie UTF8,
+- Wspierane przeglądarki IE10+, Firefox, Chrome (2 ostatnie stabilne wersje)
+- Na duży plus: Testy jednostkowe dla dostarczonej implementacji
+- Implementacja części serwerowej nie jest w zakresie powyższego zadania

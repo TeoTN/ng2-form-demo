@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'root',
+  template: `
+      <div class="col-md-10 col-md-offset-1">
+        <validated-form></validated-form>
+      </div>
+  `,
 })
 export class AppComponent {
-  title = 'app works!';
+
 }
